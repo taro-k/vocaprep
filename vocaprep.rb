@@ -9,6 +9,10 @@ require './subscript.rb'
 # Set your level from 0.0 to 10.0 as the most difficult.
 levelYou = 0.0
 
+# Interval between web API call is 3 sec. by default. Please respect API
+# provider, and too many requests in shor time may make your IP banned.
+sleepAPI = 3
+
 # Setup DB to store global dictionary
 dictGlobalFile = "db/dictGlobal.db"
 tmpBool = File.exists?(dictGlobalFile)
@@ -87,7 +91,7 @@ inputWords.each do |inputWord|
     p inputWord+" "+level.to_s+" "+senseJp
 
     # Wait for 5 sec. until the next API request.
-    sleep(5)
+    sleep(sleepAPI)
   end
 end
 
