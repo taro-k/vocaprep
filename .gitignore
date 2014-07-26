@@ -1,0 +1,4 @@
+.ruby-version
+.bundle
+vendor
+db/*.db
